@@ -2,11 +2,13 @@ import './Book.css'
 import OrderButton from './OrderButton'
 
 
-const Book = () => {
+const Book = (props) => {
     return(
-        <div>
-        <h2 className="mojaH2"> Názov knihy </h2>
+        <div className="oneBook">
+        <h2 className="mojaH2"> {props.title} </h2>
+        <img className="imgKniha" src={props.image}  />
         <OrderButton />
+        <hr className="bookLine"></hr>
         </div>
     )
 }
