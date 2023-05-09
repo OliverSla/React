@@ -1,24 +1,19 @@
 import './Examples.css';
+import { useState } from 'react';
 
 const Examples = () => {
 
-    let title = "Môj prvý titulok"
-
+    const [title, setTitle] = useState("Môj prvý titulok");
+    console.log(title);
+    
     const buttonHandler = () => {
-        console.log(title)
-        title = "Nový text"
-        console.log(title)
+        if(title === "Môj prvý titulok"){
+            setTitle("Nový titulok")
+        }else{
+            setTitle("Môj prvý titulok")
+        }
     }
-
-
-    // destructuring v javascripte 
-
-    const menaHarryPotter = ["Ron", "Harry", "Hermiona"]
     
-        const[Ron,Harry,Hermiona] = menaHarryPotter
-        console.log(Harry,Ron,Hermiona)
-    
-    // 
 
     return(
         <div>
