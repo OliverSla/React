@@ -1,11 +1,10 @@
 
-
-h1{
-  color: black !important;
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
 }
 
-.allBooks{
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
+body{
+  background: linear-gradient(180deg, rgba(28,28,28,0.1) 0%, rgba(42,42,42,0.1) 100%);
 }
