@@ -2,28 +2,27 @@ import { useState, useEffect } from 'react'
 
 const App = () => {
 
-const [windowSize, setWindowSize] = useState(window.innerWidth)
+  const url = "https://api.kanye.rest/"
 
+  const [quote, setQuote] = useState("Prvý text")
 
-const windowSizeFunc = () => {
-  setWindowSize(window.innerWidth)
-}
-
-
-useEffect( () => {
-  console.log("cleanUp function")
-  window.addEventListener('resize', windowSizeFunc)
-  return () => {
-    window.removeEventListener('resize', windowSizeFunc)
+  const getQuote = async () => {
+    
+    const response = await fetch(url)
+    const myData = await response.json()
+    console.log(myData['quote'])
+    setQuote(myData['quote'])
   }
-})
 
+  
+  useEffect(() => {
+    getQuote() 
+  }, [])
 
 
   return (
   <div className="">
-    <h1> Šírka obrazovky </h1>
-    <p> {windowSize} </p>
+    <h2> {quote} </h2>
   </div>
   )
 }
