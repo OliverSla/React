@@ -1,40 +1,35 @@
 import { useState, useEffect } from 'react'
 
 
+const url = 'http://api.open-notify.org/iss-now.json'
+
 const App = () => {
 
-  const url = 'http://api.open-notify.org/iss-now.json'
-
-  const [latitude, setLatitude] = useState("0")
-  const [longitude, setLongitude] = useState("0")
-  const [urlMap, setUrlMap] = useState("")
-
-  const getCoordinate = async () => {
-    const getData = await fetch(url)
-    const getDataToJSON = await getData.json()
-    setLatitude(getDataToJSON["iss_position"]["latitude"])
-    setLongitude(getDataToJSON["iss_position"]["longitude"])
-    const iss_long = getDataToJSON["iss_position"]["latitude"]
-    const iss_lat = getDataToJSON["iss_position"]["longitude"]
-    setUrlMap(`https://sk.mapy.cz/zakladni?x=${iss_long}&y=${iss_lat}&z=5`)
-  }
+  const [loading, setLoading] = useState(false)
+  const [latitude, setLatitude] = useState('default')
+  const [longitude, setLongitude] = useState('default')
 
   useEffect(() => {
-    getCoordinate()
+      fetch(url)
+          .then((response) => response.json())
+          .then((data) => data['iss_position'])
+          .then((data) => {
+            const longitude = (data['longitude'])
+            const latitude = (data['latitude'])
+            setLatitude(latitude)
+            setLongitude(longitude)
+          }) 
+          setLoading(true)
   }, [])
 
+      {
+        if(loading === true){
+          return <div> <h1>Stránka načítana </h1> <h2> {latitude} </h2> </div>
+        }else{
+          return <div> <h1> Stránka sa načítava </h1> <h2> {longitude} </h2> </div>
+        }
+      }
 
-  return (
-  <div className="">
-      <h2> API </h2>
-      <p> {latitude} </p>
-      <p> {longitude} </p>
-      <p> {urlMap} </p>
-      <a href={urlMap} target="_blank">
-        <button> Klikni pre zobrazenie polohy</button>
-      </a>
-  </div>
-  )
 }
 
 
