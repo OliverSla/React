@@ -4,3 +4,13 @@
   margin: 0px;
   box-sizing: border-box;
 }
+
+body{
+  text-align: center;
+}
+
+h2{
+  margin: 30px;
+  font-size: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

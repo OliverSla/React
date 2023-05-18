@@ -1,28 +1,38 @@
 import { useState, useEffect } from 'react'
 
+
 const App = () => {
 
-  const url = "https://api.kanye.rest/"
+  const url = 'http://api.open-notify.org/iss-now.json'
 
-  const [quote, setQuote] = useState("Prvý text")
+  const [latitude, setLatitude] = useState("0")
+  const [longitude, setLongitude] = useState("0")
+  const [urlMap, setUrlMap] = useState("")
 
-  const getQuote = async () => {
-    
-    const response = await fetch(url)
-    const myData = await response.json()
-    console.log(myData['quote'])
-    setQuote(myData['quote'])
+  const getCoordinate = async () => {
+    const getData = await fetch(url)
+    const getDataToJSON = await getData.json()
+    setLatitude(getDataToJSON["iss_position"]["latitude"])
+    setLongitude(getDataToJSON["iss_position"]["longitude"])
+    const iss_long = getDataToJSON["iss_position"]["latitude"]
+    const iss_lat = getDataToJSON["iss_position"]["longitude"]
+    setUrlMap(`https://sk.mapy.cz/zakladni?x=${iss_long}&y=${iss_lat}&z=5`)
   }
 
-  
   useEffect(() => {
-    getQuote() 
+    getCoordinate()
   }, [])
 
 
   return (
   <div className="">
-    <h2> {quote} </h2>
+      <h2> API </h2>
+      <p> {latitude} </p>
+      <p> {longitude} </p>
+      <p> {urlMap} </p>
+      <a href={urlMap} target="_blank">
+        <button> Klikni pre zobrazenie polohy</button>
+      </a>
   </div>
   )
 }
