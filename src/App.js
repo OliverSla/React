@@ -1,21 +1,18 @@
 import { useState, useEffect } from 'react'
+import Book from './components/Book'
 
-
-const url = 'http://api.open-notify.org/iss-now.json'
 
 const App = () => {
 
-  // Short circuit evalution
-
-  const error = true
+  const [visibility, setVisibility] = useState(true)
 
 
 
   return(
     <div>
-      {
-        error ? <h1> Nastala chyba </h1> : <h1> Bez chyby </h1>
-      }
+      <button onClick={() => setVisibility(!visibility)}> show / hide </button>
+      {visibility && <Book />}
+
     </div>
   )
 }
