@@ -13,10 +13,11 @@ const allMovies = [
     {
         id: 1,
         image: image1,
-        title: "Enola Holmesová 2",
+        title: "Alala Eaaa",
         age: "+13",
         tags: "Vtipný * Napínavý * Rodina",
         description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem accusantium amet nemo minus quo architecto quas",
+        category: "komedie",
     },
     {
         id: 2,
@@ -25,6 +26,7 @@ const allMovies = [
         age: "+13",
         tags: "Vtipný * Napínavý * Rodina",
         description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem accusantium amet nemo minus quo architecto quas",
+        category: "komedie",
     },
     {
         id: 3,
@@ -33,6 +35,7 @@ const allMovies = [
         age: "+16",
         tags: "Gangster * Napínavý * Násilí",
         description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem accusantium amet nemo minus quo architecto quas",
+        category: "romanticke",
     },
     {
         id: 4,
@@ -41,6 +44,7 @@ const allMovies = [
         age: "+16",        
         tags: "Gangster * Napínavý * Násilí",
         description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem accusantium amet nemo minus quo architecto quas",
+        category: "romanticke",
     },
     {
         id: 5,
@@ -49,6 +53,7 @@ const allMovies = [
         age: "+16",
         tags: "Gangster * Napínavý * Násilí",
         description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem accusantium amet nemo minus quo architecto quas",
+        category: "akcne",
     },
     {
         id: 6,
@@ -57,6 +62,7 @@ const allMovies = [
         age: "+16",
         tags: "Rodinný * Napínavý * Romantický",
         description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem accusantium amet nemo minus quo architecto quas",
+        category: "akcne",
     },
     {
         id: 7,
