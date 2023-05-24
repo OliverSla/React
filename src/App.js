@@ -1,16 +1,10 @@
-import dataQuestions from './dataQuestions'
-import Question from './Questions'
-
+import OneMovieSlider from './components/OneMovieSlider'
 
 const App = () => {
 
   return (
     <div>
-        {
-            dataQuestions.map((oneQuestion) => {
-             return <Question key={oneQuestion.id} title={oneQuestion.title} info={oneQuestion.info}/>
-            })
-        }
+      <OneMovieSlider />
     </div>
   )
 }
