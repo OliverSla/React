@@ -1,5 +1,61 @@
-.btnIcons{
+
+
+
+
+.all_movies_content{
+    display: flex;
+    flex-direction: row;
+    border: 2px solid green;
+    width: 500px;
+    /* overflow: hidden; */
+    height: 400px;
+    text-align: center;
+    position: relative;
+}
+
+.one_movie{
+    background-color: black;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100px;
+    /* opacity: 0; */
+    color: white;
+}
+
+.one_movie.active-slide{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.ona_movie.last-slide{
+    transform: translateX(-100%);
+}
+
+.one_movie.next-slide{
+    transform: translateX(100%);
+}
+
+.slider{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+
+
+
+
+
+
+
+.sliderBtn{
+    display: flex;
+    margin: 8px;
     font-size: 25px;
-    margin: 0px;
-    padding: 0px;
 }

@@ -1,45 +1,40 @@
 import './OneMovieSlider.css'
-import allMovies from '../data'
-import { useState } from 'react'
 import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill } from "react-icons/bs";
-
+import allMovies from '../data'
+import { useState, useEffect } from 'react'
 
 const OneMovieSlider = () => {
 
-    const [index, setIndex] = useState(0)
-    const {id, title, image, age, tags, description} = allMovies[index]
+    const [index, setIndex] = useState(0) 
 
-    const nextMovie = () => {
-        if(index < allMovies.length -1){
-            setIndex(index + 1)
-        }else{
-            setIndex(0)
-        }
-    }
+    return(
+        <section className="slider">
+            <div className="all_movies_content">
+                {
+                    allMovies.map((oneMovie, oneMovieIndex) => {
+                        const {id, title, description, age, image, tags} = oneMovie
 
-    const prevMovie = () => {
-        if(index > 0){
-            setIndex(index - 1)
-        }else{
-            setIndex(allMovies.length - 1)
-        }
-    }
+                        let mainClass = "next-slide"
 
-    return (
-        <div key={id}>
-            <img src={image} />
-            <h2> {title} </h2>
-            <h4> ID: {id} </h4>
-            <h3> {age} </h3>
-            <h3> {tags} </h3>
-            <p> {description} </p>
-            <button onClick={() => {prevMovie()}}>
-                <BsFillArrowLeftCircleFill className='btnIcons' />
-            </button>
-            <button onClick={() => {nextMovie()}}>
-                <BsFillArrowRightCircleFill className='btnIcons' />
-            </button>
-        </div>
+                       return <div key={id} className={"one_movie " + mainClass}>
+                        <img src={image} />
+                        <h4> ID: {id} </h4>
+                        <h4> Index: {oneMovieIndex} </h4>
+                        <h3> {title} </h3>
+                        <h4>{age}</h4>
+                        <h4>{tags}</h4>
+                        <p>{description}</p>
+                       </div>
+                    })
+                }
+            </div>
+            <div className="btns">
+
+            <button> <BsFillArrowLeftCircleFill className='sliderBtn' /> </button>
+            <button> <BsFillArrowRightCircleFill className='sliderBtn'/> </button>
+                
+            </div>
+        </section>
     )
 }
 

@@ -1,4 +1,4 @@
-import OneMovieSlider from './components/OneMovieSlider'
+import OneMovieSlider from "./components/OneMovieSlider"
 
 const App = () => {
 
