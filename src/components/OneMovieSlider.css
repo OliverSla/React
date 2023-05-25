@@ -3,42 +3,40 @@
 
 
 .all_movies_content{
+    background-color: rgb(36, 36, 36);
     display: flex;
     flex-direction: row;
-    border: 2px solid green;
     width: 500px;
     overflow: hidden;
     height: 400px;
     text-align: center;
     position: relative;
+    box-shadow: 2px 2px 15px 5px rgba(0, 0, 0, 0.4);
 }
 
 .one_movie{
-    background-color: black;
     position: absolute;
     top: 0px;
     left: 0px;
     width: 100%;
     height: 100px;
     opacity: 0;
-    color: black;
-    transition: 0.5s;
+    padding: 30px;
+    color: rgb(240, 240, 240);
+    transition: 700ms;
 }
 
 .one_movie.active-slide{
     opacity: 1;
     transform: translateX(0);
-    transition: 0.5s;
 }
 
 .one_movie.last-slide{
     transform: translateX(-100%);
-    transition: 0.5s;
 }
 
 .one_movie.next-slide{
     transform: translateX(100%);
-    transition: 0.5s;
 }
 
 .slider{
@@ -50,6 +48,11 @@
 }
 
 
+.btns button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
 
 
 

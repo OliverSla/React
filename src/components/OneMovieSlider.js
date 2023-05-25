@@ -7,6 +7,9 @@ const OneMovieSlider = () => {
 
     const [index, setIndex] = useState(0) 
 
+
+    // 
+
     useEffect( () => {
         if( index < 0){
             setIndex(allMovies.length - 1)
