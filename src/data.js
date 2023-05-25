@@ -96,31 +96,6 @@ const allMovies = [
         tags: "Gangster * Napínavý * Násilí",
         description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem accusantium amet nemo minus quo architecto quas",
     },
-    {
-        id: 11,
-        image: image10,
-        title: "Whoami",
-        age: "+13",
-        tags: "Gangster * Napínavý * Násilí",
-        description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem accusantium amet nemo minus quo architecto quas",
-    },
-    {
-        id: 12,
-        image: image10,
-        title: "Whoami",
-        age: "+13",
-        tags: "Gangster * Napínavý * Násilí",
-        description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem accusantium amet nemo minus quo architecto quas",
-    },
-    {
-        id: 13,
-        image: image10,
-        title: "Whoami",
-        age: "+13",
-        tags: "Gangster * Napínavý * Násilí",
-        description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem accusantium amet nemo minus quo architecto quas",
-    },
-
 ]
 
 
